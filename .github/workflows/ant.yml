@@ -1,0 +1,31 @@
+# This workflow will build a Java project with Ant
+# For more information see: https://docs.github.com/en/actions/automating-builds-and-tests/building-and-testing-java-with-ant
+
+name: Java CI
+
+on:
+  push:
+    branches: [ "master" ]
+  pull_request:
+    branches: [ "master" ]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v3
+    - name: Set up JDK 11
+      uses: actions/setup-java@v3
+      with:
+        java-version: '11'
+        distribution: 'temurin'
+    - name: Render Deploy Action
+  # You may pin to the exact commit or the version.
+  # uses: johnbeynon/render-deploy-action@a0588f9aca995a15d69a72cb2bfbf37c12e5b540
+      uses: johnbeynon/render-deploy-action@v0.0.8
+      with:
+      # ID of the service to deploy
+        service-id: srv-cht3vprhp8u4v7sl6m50?key=9QpcnuZZFqE
+        api-key: rnd_MVSbYTIws5cK4YqpYf6E3qVpz7uY
