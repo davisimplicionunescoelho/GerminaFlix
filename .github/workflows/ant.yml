@@ -27,5 +27,5 @@ jobs:
       uses: johnbeynon/render-deploy-action@v0.0.8
       with:
       # ID of the service to deploy
-        service-id: srv-cht3vprhp8u4v7sl6m50?key=9QpcnuZZFqE
-        api-key: rnd_MVSbYTIws5cK4YqpYf6E3qVpz7uY
+        service-id: ${{secrets.MY_RENDER_SERVICE_ID}}
+        api-key: ${{secrets.MY_RENDER_API_KEY}}
